@@ -17,7 +17,6 @@ content/
   README.md                — this file
   series-plan.md           — all 15 video ideas, release order, and production notes
   production-workflow.md   — step-by-step Descript workflow, simulator recording guide
-  scripts/                 — full word-for-word scripts with visual cues
 ```
 
 ## Series at a Glance
@@ -40,11 +39,3 @@ content/
 | 14 | 14 | Grover's algorithm | No |
 | 13 | 15 | Shor's algorithm | No |
 
-## Script Status
-
-| Release # | Script |
-|-----------|--------|
-| 1 | [Done](scripts/01-bit-vs-qubit.md) |
-| 2 | [Done](scripts/02-superposition.md) |
-| 3 | [Done](scripts/03-bloch-sphere-tour.md) |
-| 4–15 | Pending |
