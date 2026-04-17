@@ -1,36 +1,30 @@
-# <img src="images/logo.png" width="30" height="30" alt="" /> [Bloch sphere simulator](https://bits-and-electrons.github.io/bloch-sphere-simulator/)
+# [Bloch sphere simulator](https://bits-and-electrons.github.io/bloch-sphere-simulator/)
 
-[![Build Status](https://dev.azure.com/bits-and-electrons/bloch-sphere-simulator/_apis/build/status/bits-and-electrons.bloch-sphere-simulator.build?branchName=main)](https://dev.azure.com/bits-and-electrons/bloch-sphere-simulator/_build/latest?definitionId=6&branchName=main)
-![Code Coverage](https://img.shields.io/azure-devops/coverage/bits-and-electrons/bloch-sphere-simulator/6)
+A web based Bloch sphere simulator, intended to help people understand and visualize single qubit state transitions when applying quantum logic gates.
 
-A simple web based Bloch sphere simulator, intended to help people to understand and visualize transition of single qubit state on applying different Quantum logic gates.
+No installation required — visit https://bits-and-electrons.github.io/bloch-sphere-simulator/
 
-There is no installation required, just go to https://bits-and-electrons.github.io/bloch-sphere-simulator/.
+## Features
 
-## Browser Compatibility
-Bloch sphere model is rendered using WebGL. It is well supported in all modern browsers.
+- Animated gate application with rotation trail
+- Quantum gates: X, Y, Z, H, S, S†, T, T†, Rx, Ry, Rz
+- State presets: |0⟩, |1⟩, |+⟩, |−⟩, |+i⟩, |−i⟩
+- Draggable camera (yaw/pitch)
+- Three themes: paper, ink, blueprint
+- Gate history log
 
-Google Chrome 9+, Firefox 4+, Opera 15+, Safari 5.1+, Internet Explorer 11 and Microsoft Edge are known to support WebGL. Complete list can be found at [Can I use WebGL?](https://caniuse.com/webgl)
+## Running locally
 
-## Development
-Prerequisite to install [Git](https://git-scm.com/downloads) and [NodeJS](https://nodejs.org/en/download/) in your machine
+No build step or dependencies needed. Just serve the repo root as a static site:
 
-### Clone the repository
 ```
-git clone https://github.com/bits-and-electrons/bloch-sphere-simulator
-```
-
-### Install dependencies
-```
-npm install
+python3 -m http.server
 ```
 
-### Test your changes locally
-```
-npm test
-```
+Then open http://localhost:8000 in your browser.
 
-## Libraries Used
-- [Three.JS](https://threejs.org/)
-- [JQuery](https://jquery.com/)
-- [Bootstrap](https://getbootstrap.com/)
+## Tech stack
+
+- [React 18](https://react.dev/) — UI (loaded via CDN)
+- [Babel Standalone](https://babeljs.io/docs/babel-standalone) — JSX transpilation in-browser
+- SVG — Bloch sphere rendering (orthographic projection, no WebGL required)
