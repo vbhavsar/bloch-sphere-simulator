@@ -103,3 +103,4 @@ dist
 # TernJS port file
 .tern-port
 content/scripts/vo-ready/
+content/scripts/
