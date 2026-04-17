@@ -240,6 +240,19 @@ function App() {
           ))}
         </div>
 
+        <SectionTitle T={T}>Anim speed</SectionTitle>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6,
+          fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: 11, color: T.textDim }}>
+          <span>speed</span><span>{tweaks.animSpeed.toFixed(2)}×</span>
+        </div>
+        <input type="range" min="0.1" max="3" step="0.05" value={tweaks.animSpeed}
+          onChange={(e) => updateTweak('animSpeed', parseFloat(e.target.value))}
+          style={{ width: '100%', accentColor: T.accent, marginBottom: 6 }} />
+        <div style={{ display: 'flex', justifyContent: 'space-between',
+          fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: 10, color: T.textDim }}>
+          <span>0.1×</span><span>3×</span>
+        </div>
+
         <div style={{ height: 24 }} />
         <button onClick={undo} disabled={animating || history.length === 0}
           style={{ ...btnStyle(T), width: '100%', marginBottom: 6, opacity: (animating||!history.length) ? 0.4 : 1 }}>
