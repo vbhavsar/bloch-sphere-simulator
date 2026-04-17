@@ -259,8 +259,8 @@ function App() {
       }}>
         <CornerLabel T={T} pos="tl">BLOCH SPHERE</CornerLabel>
         <CornerLabel T={T} pos="tr">{animating ? 'EVOLVING' : 'IDLE'}</CornerLabel>
-        <CornerLabel T={T} pos="bl">
-          drag to orbit · θ={(camera.pitch * 180/Math.PI).toFixed(0)}° φ={(camera.yaw * 180/Math.PI).toFixed(0)}°
+        <CornerLabel T={T} pos="bl" onClick={() => setCamera({ yaw: 0.55, pitch: 0.35 })} clickable>
+          drag to orbit · θ={(camera.pitch * 180/Math.PI).toFixed(0)}° φ={(camera.yaw * 180/Math.PI).toFixed(0)}° · <span style={{ textDecoration: 'underline' }}>reset view</span>
         </CornerLabel>
         <CornerLabel T={T} pos="br">{history.length} gate{history.length===1?'':'s'} applied</CornerLabel>
 
@@ -398,18 +398,19 @@ function PresetBtn({ T, onClick, children }) {
   );
 }
 
-function CornerLabel({ T, pos, children }) {
+function CornerLabel({ T, pos, children, onClick, clickable }) {
   const positions = {
     tl: { top: 18, left: 20 }, tr: { top: 18, right: 20 },
     bl: { bottom: 18, left: 20 }, br: { bottom: 18, right: 20 },
   };
   return (
-    <div style={{
+    <div onClick={onClick} style={{
       position: 'absolute', ...positions[pos],
       fontFamily: "'JetBrains Mono', ui-monospace, monospace",
       fontSize: 10, letterSpacing: 1.5,
       color: T.textDim, textTransform: 'uppercase',
-      pointerEvents: 'none',
+      pointerEvents: clickable ? 'auto' : 'none',
+      cursor: clickable ? 'pointer' : 'default',
     }}>{children}</div>
   );
 }

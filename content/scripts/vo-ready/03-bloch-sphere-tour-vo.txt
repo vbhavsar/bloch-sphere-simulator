@@ -1,0 +1,16 @@
+Every possible state of a single qubit lives on the surface of this sphere.
+
+The north pole is |0⟩ — a definite 0.
+Measure it, you always get 0.
+The south pole is |1⟩ — always gives you 1.
+
+The latitude tells you the probabilities.
+Near the north pole — mostly 0, a little chance of 1.
+On the equator — exactly 50/50.
+
+The longitude is phase — a hidden degree of freedom you can't see by measuring alone.
+But it matters enormously when qubits interact with each other.
+
+The Bloch sphere is the map.
+Every quantum gate is a rotation on this sphere.
+Next: the gate that creates superposition — the Hadamard.
