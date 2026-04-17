@@ -1,8 +1,8 @@
-# [Bloch sphere simulator](https://bits-and-electrons.github.io/bloch-sphere-simulator/)
+# [Bloch sphere simulator](https://vbhavsar.github.io/bloch-sphere-simulator/)
 
 A web based Bloch sphere simulator, intended to help people understand and visualize single qubit state transitions when applying quantum logic gates.
 
-No installation required — visit https://bits-and-electrons.github.io/bloch-sphere-simulator/
+No installation required — visit https://vbhavsar.github.io/bloch-sphere-simulator/
 
 ## Features
 
